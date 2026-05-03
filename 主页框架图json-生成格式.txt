@@ -1,0 +1,23 @@
+[
+  {
+    "label": "API 网关",
+    "style": "swimlane",
+    "children": [
+      { "label": "Nginx", "style": "None", "children": [] },
+      { "label": "Kong", "style": "None", "children": [] }
+    ]
+  },
+  {
+    "label": "认证服务",
+    "style": "swimlane",
+    "children": [
+      { "label": "用户登录", "style": "None", "children": [] },
+      { "label": "JWT 刷新", "style": "None", "children": [] }
+    ]
+  },
+  {
+    "label": "订单服务",
+    "style": "None",
+    "children": []
+  }
+]

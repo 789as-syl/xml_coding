@@ -1,0 +1,3 @@
+swimlane
+rounded
+None：当为None时，就需要遍历所有None去进行澄清。

@@ -1,0 +1,4 @@
+interface:
+  display_name: "XML Architecture Designer"
+  short_description: "Design architecture and interface flow diagrams"
+  default_prompt: "Use $xml-architecture-designer to design a new project architecture, confirm the architecture page, then generate per-interface Draw.io flow pages."

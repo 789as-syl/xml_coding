@@ -1,0 +1,123 @@
+{
+  "layers": [
+    {
+      "label": "前端",
+      "child": [
+        {
+          "label": "用户登录页面",
+          "feature": "user"
+        },
+        {
+          "label": "用户注册页面",
+          "feature": "user"
+        },
+        {
+          "label": "订单列表页面",
+          "feature": "order"
+        }
+      ]
+    },
+    {
+      "label": "网关层",
+      "child": [
+        {
+          "label": "JWT认证中间件",
+          "feature": "user"
+        },
+        {
+          "label": "接口限流规则",
+          "feature": "gateway"
+        }
+      ]
+    },
+    {
+      "label": "对外接口层",
+      "child": [
+        {
+          "label": "/user/login",
+          "feature": "user"
+        },
+        {
+          "label": "/user/register",
+          "feature": "user"
+        },
+        {
+          "label": "/orders/create",
+          "feature": "order"
+        }
+      ]
+    },
+    {
+      "label": "DTO层",
+      "child": [
+        {
+          "label": "LoginRequest",
+          "feature": "user"
+        },
+        {
+          "label": "RegisterRequest",
+          "feature": "user"
+        },
+        {
+          "label": "CreateOrderRequest",
+          "feature": "order"
+        }
+      ]
+    },
+    {
+      "label": "服务层",
+      "child": [
+        {
+          "label": "用户登录服务",
+          "feature": "user"
+        },
+        {
+          "label": "用户注册服务",
+          "feature": "user"
+        },
+        {
+          "label": "JWT刷新服务",
+          "feature": "user"
+        },
+        {
+          "label": "JWT验证服务",
+          "feature": "user"
+        },
+        {
+          "label": "订单创建服务",
+          "feature": "order"
+        }
+      ]
+    },
+    {
+      "label": "Repository层",
+      "child": [
+        {
+          "label": "查询用户凭证",
+          "feature": "user"
+        },
+        {
+          "label": "保存用户资料",
+          "feature": "user"
+        },
+        {
+          "label": "保存订单信息",
+          "feature": "order"
+        }
+      ]
+    },
+    {
+      "label": "数据存储层",
+      "child": [
+        {
+          "label": "users表",
+          "feature": "user"
+        },
+        {
+          "label": "orders表",
+          "feature": "order"
+        }
+      ]
+    }
+  ]
+}
