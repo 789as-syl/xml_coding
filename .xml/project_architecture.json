@@ -1,32 +1,57 @@
 {
   "layers": [
     {
-      "label": "前端",
+      "label": "用户与外部参与者层",
       "child": [
         {
-          "label": "用户登录页面",
-          "feature": "user"
+          "label": "普通用户",
+          "feature": null
         },
         {
-          "label": "用户注册页面",
-          "feature": "user"
+          "label": "管理员",
+          "feature": null
         },
         {
-          "label": "订单列表页面",
-          "feature": "order"
+          "label": "系统Agent执行者",
+          "feature": "agent-orchestration"
         }
       ]
     },
     {
-      "label": "网关层",
+      "label": "前端与客户端层",
       "child": [
         {
-          "label": "JWT认证中间件",
-          "feature": "user"
+          "label": "知识库与文档管理前端",
+          "feature": "knowledge-base"
         },
         {
-          "label": "接口限流规则",
-          "feature": "gateway"
+          "label": "智能问答会话前端",
+          "feature": "conversation"
+        },
+        {
+          "label": "管理后台前端",
+          "feature": "admin"
+        }
+      ]
+    },
+    {
+      "label": "接入与安全层",
+      "child": [
+        {
+          "label": "API网关与路由入口",
+          "feature": null
+        },
+        {
+          "label": "身份认证中间件",
+          "feature": "auth"
+        },
+        {
+          "label": "权限与数据隔离守卫",
+          "feature": "access-control"
+        },
+        {
+          "label": "请求限流与访问日志",
+          "feature": null
         }
       ]
     },
@@ -34,88 +59,858 @@
       "label": "对外接口层",
       "child": [
         {
-          "label": "/user/login",
-          "feature": "user"
+          "label": "认证接口",
+          "feature": "auth"
         },
         {
-          "label": "/user/register",
-          "feature": "user"
+          "label": "知识库接口",
+          "feature": "knowledge-base"
         },
         {
-          "label": "/orders/create",
-          "feature": "order"
+          "label": "文档上传与管理接口",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "问答会话接口",
+          "feature": "conversation"
+        },
+        {
+          "label": "Agentic问答接口",
+          "feature": "agent-orchestration"
+        },
+        {
+          "label": "管理员运营接口",
+          "feature": "admin"
         }
       ]
     },
     {
-      "label": "DTO层",
+      "label": "应用用例编排层",
       "child": [
         {
-          "label": "LoginRequest",
-          "feature": "user"
+          "label": "用户登录用例",
+          "feature": "auth"
         },
         {
-          "label": "RegisterRequest",
-          "feature": "user"
+          "label": "知识库配置用例",
+          "feature": "knowledge-base"
         },
         {
-          "label": "CreateOrderRequest",
-          "feature": "order"
+          "label": "文档上传入库用例",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "文档处理状态查询用例",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "指定知识库问答用例",
+          "feature": "agent-orchestration"
+        },
+        {
+          "label": "会话上下文用例",
+          "feature": "conversation"
+        },
+        {
+          "label": "管理员运维管理用例",
+          "feature": "admin"
         }
       ]
     },
     {
-      "label": "服务层",
+      "label": "Agent与RAG编排层",
       "child": [
         {
-          "label": "用户登录服务",
-          "feature": "user"
+          "label": "用户意图识别节点",
+          "feature": "agent-orchestration"
         },
         {
-          "label": "用户注册服务",
-          "feature": "user"
+          "label": "历史问题改写节点",
+          "feature": "conversation"
         },
         {
-          "label": "JWT刷新服务",
-          "feature": "user"
+          "label": "检索策略规划节点",
+          "feature": "agent-orchestration"
         },
         {
-          "label": "JWT验证服务",
-          "feature": "user"
+          "label": "子问题拆解节点",
+          "feature": "agent-orchestration"
         },
         {
-          "label": "订单创建服务",
-          "feature": "order"
+          "label": "RAG工具调用编排器",
+          "feature": "agent-orchestration"
+        },
+        {
+          "label": "答案依据校验节点",
+          "feature": "answer-generation"
+        },
+        {
+          "label": "低置信度拒答节点",
+          "feature": "answer-generation"
+        },
+        {
+          "label": "推理过程摘要节点",
+          "feature": "answer-generation"
         }
       ]
     },
     {
-      "label": "Repository层",
+      "label": "文档处理与检索服务层",
       "child": [
         {
-          "label": "查询用户凭证",
-          "feature": "user"
+          "label": "文档解析清洗服务",
+          "feature": "document-ingestion"
         },
         {
-          "label": "保存用户资料",
-          "feature": "user"
+          "label": "文本切分服务",
+          "feature": "document-ingestion"
         },
         {
-          "label": "保存订单信息",
-          "feature": "order"
+          "label": "向量化索引服务",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "混合检索服务",
+          "feature": "retrieval"
+        },
+        {
+          "label": "召回重排序服务",
+          "feature": "retrieval"
+        },
+        {
+          "label": "引用定位服务",
+          "feature": "citation"
+        },
+        {
+          "label": "摘要与表格解析工具",
+          "feature": "agent-orchestration"
+        },
+        {
+          "label": "多文档综合归纳服务",
+          "feature": "answer-generation"
         }
       ]
     },
     {
-      "label": "数据存储层",
+      "label": "业务领域服务层",
       "child": [
         {
-          "label": "users表",
-          "feature": "user"
+          "label": "用户账户服务",
+          "feature": "auth"
         },
         {
-          "label": "orders表",
-          "feature": "order"
+          "label": "角色权限服务",
+          "feature": "access-control"
+        },
+        {
+          "label": "知识库服务",
+          "feature": "knowledge-base"
+        },
+        {
+          "label": "文档元数据服务",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "会话记录服务",
+          "feature": "conversation"
+        },
+        {
+          "label": "问答结果归因服务",
+          "feature": "citation"
+        },
+        {
+          "label": "管理配置服务",
+          "feature": "admin"
+        }
+      ]
+    },
+    {
+      "label": "异步任务与中间件层",
+      "child": [
+        {
+          "label": "文档处理任务队列",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "解析向量化Worker",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "查询结果缓存",
+          "feature": "retrieval"
+        },
+        {
+          "label": "会话上下文缓存",
+          "feature": "conversation"
+        },
+        {
+          "label": "任务失败重试与死信队列",
+          "feature": "document-ingestion"
+        }
+      ]
+    },
+    {
+      "label": "适配器与集成层",
+      "child": [
+        {
+          "label": "文件存储适配器",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "文档解析器适配器",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "Embedding模型适配器",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "向量库适配器",
+          "feature": "retrieval"
+        },
+        {
+          "label": "关键词全文检索适配器",
+          "feature": "retrieval"
+        },
+        {
+          "label": "重排序模型适配器",
+          "feature": "retrieval"
+        },
+        {
+          "label": "LLM生成模型适配器",
+          "feature": "answer-generation"
+        },
+        {
+          "label": "引用定位适配器",
+          "feature": "citation"
+        },
+        {
+          "label": "Redis缓存适配器",
+          "feature": null
+        }
+      ]
+    },
+    {
+      "label": "数据访问层",
+      "child": [
+        {
+          "label": "用户权限仓储",
+          "feature": "auth"
+        },
+        {
+          "label": "知识库仓储",
+          "feature": "knowledge-base"
+        },
+        {
+          "label": "文档元数据仓储",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "分块与引用仓储",
+          "feature": "citation"
+        },
+        {
+          "label": "会话消息仓储",
+          "feature": "conversation"
+        },
+        {
+          "label": "文档任务状态仓储",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "管理配置仓储",
+          "feature": "admin"
+        }
+      ]
+    },
+    {
+      "label": "数据存储与索引层",
+      "child": [
+        {
+          "label": "用户权限数据表",
+          "feature": "auth"
+        },
+        {
+          "label": "知识库与文档元数据表",
+          "feature": "knowledge-base"
+        },
+        {
+          "label": "文档处理任务状态表",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "文档分块与引用元数据表",
+          "feature": "citation"
+        },
+        {
+          "label": "会话与问答记录表",
+          "feature": "conversation"
+        },
+        {
+          "label": "管理配置数据表",
+          "feature": "admin"
+        },
+        {
+          "label": "原始文档对象存储",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "向量索引库",
+          "feature": "retrieval"
+        },
+        {
+          "label": "关键词全文索引库",
+          "feature": "retrieval"
+        },
+        {
+          "label": "Redis缓存存储",
+          "feature": null
+        },
+        {
+          "label": "处理日志与错误记录",
+          "feature": null
+        }
+      ]
+    },
+    {
+      "label": "外部模型与工具生态层",
+      "child": [
+        {
+          "label": "LLM模型服务",
+          "feature": "answer-generation"
+        },
+        {
+          "label": "Embedding模型服务",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "重排序模型服务",
+          "feature": "retrieval"
+        },
+        {
+          "label": "文档解析库或服务",
+          "feature": "document-ingestion"
+        }
+      ]
+    },
+    {
+      "label": "运行与运维层",
+      "child": [
+        {
+          "label": "前端静态资源托管",
+          "feature": null
+        },
+        {
+          "label": "API服务运行环境",
+          "feature": null
+        },
+        {
+          "label": "异步Worker运行环境",
+          "feature": "document-ingestion"
+        },
+        {
+          "label": "配置与密钥管理",
+          "feature": null
+        },
+        {
+          "label": "日志指标追踪系统",
+          "feature": null
+        },
+        {
+          "label": "备份恢复与发布流水线",
+          "feature": null
+        }
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "feature": "auth",
+      "label": "用户登录与授权访问流程",
+      "edges": [
+        {
+          "from": "普通用户",
+          "to": "智能问答会话前端",
+          "label": "1. 输入账号凭证并提交登录"
+        },
+        {
+          "from": "智能问答会话前端",
+          "to": "API网关与路由入口",
+          "label": "2. 发送登录请求"
+        },
+        {
+          "from": "API网关与路由入口",
+          "to": "身份认证中间件",
+          "label": "3. 进入认证链路"
+        },
+        {
+          "from": "身份认证中间件",
+          "to": "认证接口",
+          "label": "4. 路由到认证接口"
+        },
+        {
+          "from": "认证接口",
+          "to": "用户登录用例",
+          "label": "5. 编排登录校验"
+        },
+        {
+          "from": "用户登录用例",
+          "to": "用户账户服务",
+          "label": "6. 校验用户凭证与状态"
+        },
+        {
+          "from": "用户账户服务",
+          "to": "角色权限服务",
+          "label": "7. 获取角色与权限范围"
+        },
+        {
+          "from": "角色权限服务",
+          "to": "用户权限仓储",
+          "label": "8. 查询账户与角色记录"
+        },
+        {
+          "from": "用户权限仓储",
+          "to": "用户权限数据表",
+          "label": "9. 读取用户权限数据"
+        },
+        {
+          "from": "用户登录用例",
+          "to": "权限与数据隔离守卫",
+          "label": "10. 为后续知识库访问建立鉴权上下文"
+        }
+      ]
+    },
+    {
+      "feature": "document-ingestion",
+      "label": "文档上传解析向量化流程",
+      "edges": [
+        {
+          "from": "普通用户",
+          "to": "知识库与文档管理前端",
+          "label": "1. 选择知识库并上传文档"
+        },
+        {
+          "from": "知识库与文档管理前端",
+          "to": "API网关与路由入口",
+          "label": "2. 提交上传请求"
+        },
+        {
+          "from": "API网关与路由入口",
+          "to": "身份认证中间件",
+          "label": "3. 校验登录态"
+        },
+        {
+          "from": "身份认证中间件",
+          "to": "权限与数据隔离守卫",
+          "label": "4. 校验知识库写入权限"
+        },
+        {
+          "from": "权限与数据隔离守卫",
+          "to": "文档上传与管理接口",
+          "label": "5. 放行文档管理请求"
+        },
+        {
+          "from": "文档上传与管理接口",
+          "to": "文档上传入库用例",
+          "label": "6. 编排上传与入库"
+        },
+        {
+          "from": "文档上传入库用例",
+          "to": "文件存储适配器",
+          "label": "7. 保存原始文件"
+        },
+        {
+          "from": "文件存储适配器",
+          "to": "原始文档对象存储",
+          "label": "8. 写入对象存储"
+        },
+        {
+          "from": "文档上传入库用例",
+          "to": "文档元数据服务",
+          "label": "9. 记录文档元数据与初始状态"
+        },
+        {
+          "from": "文档元数据服务",
+          "to": "文档元数据仓储",
+          "label": "10. 持久化文档记录"
+        },
+        {
+          "from": "文档元数据仓储",
+          "to": "知识库与文档元数据表",
+          "label": "11. 写入知识库文档关系"
+        },
+        {
+          "from": "文档上传入库用例",
+          "to": "文档处理任务队列",
+          "label": "12. 投递异步解析任务"
+        },
+        {
+          "from": "文档处理任务队列",
+          "to": "解析向量化Worker",
+          "label": "13. Worker领取处理任务"
+        },
+        {
+          "from": "解析向量化Worker",
+          "to": "文档解析清洗服务",
+          "label": "14. 解析并清洗文档内容"
+        },
+        {
+          "from": "文档解析清洗服务",
+          "to": "文档解析器适配器",
+          "label": "15. 调用可替换解析器"
+        },
+        {
+          "from": "文档解析器适配器",
+          "to": "文档解析库或服务",
+          "label": "16. 执行PDF/DOCX/HTML等解析"
+        },
+        {
+          "from": "文档解析清洗服务",
+          "to": "文本切分服务",
+          "label": "17. 生成带定位信息的分块"
+        },
+        {
+          "from": "文本切分服务",
+          "to": "分块与引用仓储",
+          "label": "18. 保存分块与页码段落定位"
+        },
+        {
+          "from": "分块与引用仓储",
+          "to": "文档分块与引用元数据表",
+          "label": "19. 写入引用元数据"
+        },
+        {
+          "from": "文本切分服务",
+          "to": "向量化索引服务",
+          "label": "20. 准备向量化入库"
+        },
+        {
+          "from": "向量化索引服务",
+          "to": "Embedding模型适配器",
+          "label": "21. 调用Embedding模型"
+        },
+        {
+          "from": "Embedding模型适配器",
+          "to": "Embedding模型服务",
+          "label": "22. 生成分块向量"
+        },
+        {
+          "from": "向量化索引服务",
+          "to": "向量库适配器",
+          "label": "23. 写入向量索引"
+        },
+        {
+          "from": "向量库适配器",
+          "to": "向量索引库",
+          "label": "24. 保存向量索引"
+        },
+        {
+          "from": "解析向量化Worker",
+          "to": "文档任务状态仓储",
+          "label": "25. 更新处理完成或失败状态"
+        },
+        {
+          "from": "文档任务状态仓储",
+          "to": "文档处理任务状态表",
+          "label": "26. 持久化处理状态"
+        }
+      ]
+    },
+    {
+      "feature": "agent-orchestration",
+      "label": "指定知识库Agentic RAG问答流程",
+      "edges": [
+        {
+          "from": "普通用户",
+          "to": "智能问答会话前端",
+          "label": "1. 在指定知识库中提出问题"
+        },
+        {
+          "from": "智能问答会话前端",
+          "to": "API网关与路由入口",
+          "label": "2. 提交问答请求"
+        },
+        {
+          "from": "API网关与路由入口",
+          "to": "身份认证中间件",
+          "label": "3. 校验登录态"
+        },
+        {
+          "from": "身份认证中间件",
+          "to": "权限与数据隔离守卫",
+          "label": "4. 校验知识库读取权限"
+        },
+        {
+          "from": "权限与数据隔离守卫",
+          "to": "Agentic问答接口",
+          "label": "5. 放行问答请求"
+        },
+        {
+          "from": "Agentic问答接口",
+          "to": "指定知识库问答用例",
+          "label": "6. 编排指定知识库问答"
+        },
+        {
+          "from": "指定知识库问答用例",
+          "to": "会话上下文用例",
+          "label": "7. 读取当前会话上下文"
+        },
+        {
+          "from": "会话上下文用例",
+          "to": "会话上下文缓存",
+          "label": "8. 获取短期上下文"
+        },
+        {
+          "from": "会话上下文用例",
+          "to": "历史问题改写节点",
+          "label": "9. 补全省略追问"
+        },
+        {
+          "from": "历史问题改写节点",
+          "to": "用户意图识别节点",
+          "label": "10. 判断问答/摘要/对比/提取意图"
+        },
+        {
+          "from": "用户意图识别节点",
+          "to": "检索策略规划节点",
+          "label": "11. 决定单轮或多轮检索策略"
+        },
+        {
+          "from": "检索策略规划节点",
+          "to": "子问题拆解节点",
+          "label": "12. 对复杂问题拆解子问题"
+        },
+        {
+          "from": "子问题拆解节点",
+          "to": "RAG工具调用编排器",
+          "label": "13. 调用检索与分析工具"
+        },
+        {
+          "from": "RAG工具调用编排器",
+          "to": "混合检索服务",
+          "label": "14. 执行向量与关键词混合检索"
+        },
+        {
+          "from": "混合检索服务",
+          "to": "向量库适配器",
+          "label": "15. 查询向量召回"
+        },
+        {
+          "from": "向量库适配器",
+          "to": "向量索引库",
+          "label": "16. 读取相关分块向量"
+        },
+        {
+          "from": "混合检索服务",
+          "to": "关键词全文检索适配器",
+          "label": "17. 查询关键词召回"
+        },
+        {
+          "from": "关键词全文检索适配器",
+          "to": "关键词全文索引库",
+          "label": "18. 读取全文索引结果"
+        },
+        {
+          "from": "混合检索服务",
+          "to": "召回重排序服务",
+          "label": "19. 合并召回结果并重排序"
+        },
+        {
+          "from": "召回重排序服务",
+          "to": "重排序模型适配器",
+          "label": "20. 调用重排序模型"
+        },
+        {
+          "from": "重排序模型适配器",
+          "to": "重排序模型服务",
+          "label": "21. 计算相关性排序"
+        },
+        {
+          "from": "召回重排序服务",
+          "to": "引用定位服务",
+          "label": "22. 定位文档名、页码或段落"
+        },
+        {
+          "from": "引用定位服务",
+          "to": "分块与引用仓储",
+          "label": "23. 读取引用元数据"
+        },
+        {
+          "from": "分块与引用仓储",
+          "to": "文档分块与引用元数据表",
+          "label": "24. 获取可追溯来源"
+        },
+        {
+          "from": "引用定位服务",
+          "to": "答案依据校验节点",
+          "label": "25. 检查回答依据充分性"
+        },
+        {
+          "from": "答案依据校验节点",
+          "to": "LLM生成模型适配器",
+          "label": "26. 发送带引用上下文的生成请求"
+        },
+        {
+          "from": "LLM生成模型适配器",
+          "to": "LLM模型服务",
+          "label": "27. 生成候选回答"
+        },
+        {
+          "from": "LLM模型服务",
+          "to": "多文档综合归纳服务",
+          "label": "28. 综合多个文档片段"
+        },
+        {
+          "from": "多文档综合归纳服务",
+          "to": "低置信度拒答节点",
+          "label": "29. 对低置信度结果拒答或提示"
+        },
+        {
+          "from": "低置信度拒答节点",
+          "to": "推理过程摘要节点",
+          "label": "30. 输出不暴露私有链路的过程摘要"
+        },
+        {
+          "from": "推理过程摘要节点",
+          "to": "问答结果归因服务",
+          "label": "31. 绑定答案、引用与检索摘要"
+        },
+        {
+          "from": "问答结果归因服务",
+          "to": "会话记录服务",
+          "label": "32. 保存问答记录"
+        },
+        {
+          "from": "会话记录服务",
+          "to": "会话消息仓储",
+          "label": "33. 持久化会话消息"
+        },
+        {
+          "from": "会话消息仓储",
+          "to": "会话与问答记录表",
+          "label": "34. 写入问题、答案、引用与检索摘要"
+        }
+      ]
+    },
+    {
+      "feature": "conversation",
+      "label": "多轮追问上下文流程",
+      "edges": [
+        {
+          "from": "普通用户",
+          "to": "智能问答会话前端",
+          "label": "1. 基于上一轮答案继续追问"
+        },
+        {
+          "from": "智能问答会话前端",
+          "to": "问答会话接口",
+          "label": "2. 提交会话内追问"
+        },
+        {
+          "from": "问答会话接口",
+          "to": "会话上下文用例",
+          "label": "3. 编排上下文读取与补全"
+        },
+        {
+          "from": "会话上下文用例",
+          "to": "会话记录服务",
+          "label": "4. 读取历史问答记录"
+        },
+        {
+          "from": "会话记录服务",
+          "to": "会话消息仓储",
+          "label": "5. 查询历史消息"
+        },
+        {
+          "from": "会话消息仓储",
+          "to": "会话与问答记录表",
+          "label": "6. 返回历史上下文"
+        },
+        {
+          "from": "会话上下文用例",
+          "to": "会话上下文缓存",
+          "label": "7. 更新短期上下文缓存"
+        },
+        {
+          "from": "会话上下文用例",
+          "to": "历史问题改写节点",
+          "label": "8. 将省略问题改写为完整问题"
+        },
+        {
+          "from": "历史问题改写节点",
+          "to": "指定知识库问答用例",
+          "label": "9. 交给问答用例继续检索生成"
+        }
+      ]
+    },
+    {
+      "feature": "admin",
+      "label": "管理员查看文档处理状态流程",
+      "edges": [
+        {
+          "from": "管理员",
+          "to": "管理后台前端",
+          "label": "1. 打开文档处理状态页面"
+        },
+        {
+          "from": "管理后台前端",
+          "to": "API网关与路由入口",
+          "label": "2. 请求文档状态列表"
+        },
+        {
+          "from": "API网关与路由入口",
+          "to": "身份认证中间件",
+          "label": "3. 校验管理员登录态"
+        },
+        {
+          "from": "身份认证中间件",
+          "to": "权限与数据隔离守卫",
+          "label": "4. 校验管理员权限"
+        },
+        {
+          "from": "权限与数据隔离守卫",
+          "to": "管理员运营接口",
+          "label": "5. 放行后台运营请求"
+        },
+        {
+          "from": "管理员运营接口",
+          "to": "管理员运维管理用例",
+          "label": "6. 编排后台状态查询"
+        },
+        {
+          "from": "管理员运维管理用例",
+          "to": "文档处理状态查询用例",
+          "label": "7. 查询文档任务进度"
+        },
+        {
+          "from": "文档处理状态查询用例",
+          "to": "文档任务状态仓储",
+          "label": "8. 读取处理状态与失败原因"
+        },
+        {
+          "from": "文档任务状态仓储",
+          "to": "文档处理任务状态表",
+          "label": "9. 获取待解析/解析中/完成/失败状态"
+        },
+        {
+          "from": "文档处理状态查询用例",
+          "to": "处理日志与错误记录",
+          "label": "10. 补充失败日志与错误信息"
+        },
+        {
+          "from": "管理员运维管理用例",
+          "to": "管理配置服务",
+          "label": "11. 读取展示所需系统配置"
+        },
+        {
+          "from": "管理配置服务",
+          "to": "管理配置仓储",
+          "label": "12. 查询管理配置"
+        },
+        {
+          "from": "管理配置仓储",
+          "to": "管理配置数据表",
+          "label": "13. 返回配置数据"
         }
       ]
     }

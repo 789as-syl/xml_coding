@@ -1,0 +1,573 @@
+{
+  "layers": [
+    {
+      "label": "用户与外部参与者层",
+      "child": [
+        {
+          "label": "终端用户",
+          "feature": "order"
+        },
+        {
+          "label": "管理员",
+          "feature": "admin"
+        },
+        {
+          "label": "支付平台",
+          "feature": "payment"
+        },
+        {
+          "label": "定时任务调度器",
+          "feature": null
+        }
+      ]
+    },
+    {
+      "label": "前端与客户端层",
+      "child": [
+        {
+          "label": "商城前端",
+          "feature": "order"
+        },
+        {
+          "label": "管理后台前端",
+          "feature": "admin"
+        }
+      ]
+    },
+    {
+      "label": "接入与网关层",
+      "child": [
+        {
+          "label": "API网关",
+          "feature": null
+        },
+        {
+          "label": "身份认证过滤器",
+          "feature": "auth"
+        },
+        {
+          "label": "限流与访问日志组件",
+          "feature": null
+        }
+      ]
+    },
+    {
+      "label": "对外接口层",
+      "child": [
+        {
+          "label": "认证接口",
+          "feature": "auth"
+        },
+        {
+          "label": "商品接口",
+          "feature": "catalog"
+        },
+        {
+          "label": "购物车接口",
+          "feature": "cart"
+        },
+        {
+          "label": "订单接口",
+          "feature": "order"
+        },
+        {
+          "label": "支付接口",
+          "feature": "payment"
+        },
+        {
+          "label": "支付回调接口",
+          "feature": "payment"
+        },
+        {
+          "label": "后台管理接口",
+          "feature": "admin"
+        }
+      ]
+    },
+    {
+      "label": "应用编排层",
+      "child": [
+        {
+          "label": "登录认证用例",
+          "feature": "auth"
+        },
+        {
+          "label": "商品检索用例",
+          "feature": "catalog"
+        },
+        {
+          "label": "购物车结算用例",
+          "feature": "cart"
+        },
+        {
+          "label": "订单创建用例",
+          "feature": "order"
+        },
+        {
+          "label": "支付发起用例",
+          "feature": "payment"
+        },
+        {
+          "label": "支付回调处理用例",
+          "feature": "payment"
+        },
+        {
+          "label": "后台商品维护用例",
+          "feature": "admin"
+        }
+      ]
+    },
+    {
+      "label": "领域服务层",
+      "child": [
+        {
+          "label": "账户服务",
+          "feature": "auth"
+        },
+        {
+          "label": "商品服务",
+          "feature": "catalog"
+        },
+        {
+          "label": "购物车服务",
+          "feature": "cart"
+        },
+        {
+          "label": "订单服务",
+          "feature": "order"
+        },
+        {
+          "label": "库存服务",
+          "feature": "inventory"
+        },
+        {
+          "label": "支付服务",
+          "feature": "payment"
+        },
+        {
+          "label": "通知服务",
+          "feature": "notification"
+        }
+      ]
+    },
+    {
+      "label": "适配器与集成层",
+      "child": [
+        {
+          "label": "支付平台适配器",
+          "feature": "payment"
+        },
+        {
+          "label": "短信邮件适配器",
+          "feature": "notification"
+        },
+        {
+          "label": "对象存储适配器",
+          "feature": "catalog"
+        }
+      ]
+    },
+    {
+      "label": "中间件与异步层",
+      "child": [
+        {
+          "label": "订单事件队列",
+          "feature": "order"
+        },
+        {
+          "label": "库存扣减任务",
+          "feature": "inventory"
+        },
+        {
+          "label": "通知发送任务",
+          "feature": "notification"
+        },
+        {
+          "label": "分布式缓存",
+          "feature": null
+        }
+      ]
+    },
+    {
+      "label": "数据访问层",
+      "child": [
+        {
+          "label": "账户仓储",
+          "feature": "auth"
+        },
+        {
+          "label": "商品仓储",
+          "feature": "catalog"
+        },
+        {
+          "label": "购物车仓储",
+          "feature": "cart"
+        },
+        {
+          "label": "订单仓储",
+          "feature": "order"
+        },
+        {
+          "label": "库存仓储",
+          "feature": "inventory"
+        },
+        {
+          "label": "支付流水仓储",
+          "feature": "payment"
+        }
+      ]
+    },
+    {
+      "label": "数据存储层",
+      "child": [
+        {
+          "label": "用户账户库",
+          "feature": "auth"
+        },
+        {
+          "label": "商品库",
+          "feature": "catalog"
+        },
+        {
+          "label": "购物车库",
+          "feature": "cart"
+        },
+        {
+          "label": "订单库",
+          "feature": "order"
+        },
+        {
+          "label": "库存库",
+          "feature": "inventory"
+        },
+        {
+          "label": "支付流水库",
+          "feature": "payment"
+        },
+        {
+          "label": "商品图片对象存储",
+          "feature": "catalog"
+        }
+      ]
+    },
+    {
+      "label": "运行与运维层",
+      "child": [
+        {
+          "label": "服务容器运行环境",
+          "feature": null
+        },
+        {
+          "label": "配置与密钥管理",
+          "feature": null
+        },
+        {
+          "label": "日志指标追踪系统",
+          "feature": null
+        },
+        {
+          "label": "发布回滚流水线",
+          "feature": null
+        }
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "feature": "auth",
+      "label": "用户登录流程",
+      "edges": [
+        {
+          "from": "终端用户",
+          "to": "商城前端",
+          "label": "1. 输入账号密码并提交登录"
+        },
+        {
+          "from": "商城前端",
+          "to": "API网关",
+          "label": "2. 发送认证请求"
+        },
+        {
+          "from": "API网关",
+          "to": "认证接口",
+          "label": "3. 路由到认证接口"
+        },
+        {
+          "from": "认证接口",
+          "to": "登录认证用例",
+          "label": "4. 执行登录认证用例"
+        },
+        {
+          "from": "登录认证用例",
+          "to": "账户服务",
+          "label": "5. 校验账户状态与凭证"
+        },
+        {
+          "from": "账户服务",
+          "to": "账户仓储",
+          "label": "6. 查询账户数据"
+        },
+        {
+          "from": "账户仓储",
+          "to": "用户账户库",
+          "label": "7. 读取用户账户记录"
+        }
+      ]
+    },
+    {
+      "feature": "catalog",
+      "label": "商品检索流程",
+      "edges": [
+        {
+          "from": "终端用户",
+          "to": "商城前端",
+          "label": "1. 输入关键词或筛选条件"
+        },
+        {
+          "from": "商城前端",
+          "to": "商品接口",
+          "label": "2. 请求商品列表"
+        },
+        {
+          "from": "商品接口",
+          "to": "商品检索用例",
+          "label": "3. 编排商品查询"
+        },
+        {
+          "from": "商品检索用例",
+          "to": "商品服务",
+          "label": "4. 查询商品信息与可售状态"
+        },
+        {
+          "from": "商品服务",
+          "to": "商品仓储",
+          "label": "5. 读取商品索引或商品记录"
+        },
+        {
+          "from": "商品仓储",
+          "to": "商品库",
+          "label": "6. 获取商品基础数据"
+        },
+        {
+          "from": "商品服务",
+          "to": "对象存储适配器",
+          "label": "7. 获取商品图片访问地址"
+        },
+        {
+          "from": "对象存储适配器",
+          "to": "商品图片对象存储",
+          "label": "8. 读取商品图片资源"
+        }
+      ]
+    },
+    {
+      "feature": "order",
+      "label": "用户下单流程",
+      "edges": [
+        {
+          "from": "终端用户",
+          "to": "商城前端",
+          "label": "1. 确认购物车并提交订单"
+        },
+        {
+          "from": "商城前端",
+          "to": "订单接口",
+          "label": "2. 提交订单创建请求"
+        },
+        {
+          "from": "订单接口",
+          "to": "订单创建用例",
+          "label": "3. 编排订单创建"
+        },
+        {
+          "from": "订单创建用例",
+          "to": "购物车服务",
+          "label": "4. 读取购物车明细"
+        },
+        {
+          "from": "购物车服务",
+          "to": "购物车仓储",
+          "label": "5. 查询购物车数据"
+        },
+        {
+          "from": "订单创建用例",
+          "to": "库存服务",
+          "label": "6. 校验并预占库存"
+        },
+        {
+          "from": "库存服务",
+          "to": "库存仓储",
+          "label": "7. 更新库存占用"
+        },
+        {
+          "from": "订单创建用例",
+          "to": "订单服务",
+          "label": "8. 生成订单主记录"
+        },
+        {
+          "from": "订单服务",
+          "to": "订单仓储",
+          "label": "9. 保存订单数据"
+        },
+        {
+          "from": "订单仓储",
+          "to": "订单库",
+          "label": "10. 写入订单记录"
+        },
+        {
+          "from": "订单服务",
+          "to": "订单事件队列",
+          "label": "11. 发布订单创建事件"
+        }
+      ]
+    },
+    {
+      "feature": "payment",
+      "label": "订单支付流程",
+      "edges": [
+        {
+          "from": "终端用户",
+          "to": "商城前端",
+          "label": "1. 发起订单支付"
+        },
+        {
+          "from": "商城前端",
+          "to": "支付接口",
+          "label": "2. 请求支付"
+        },
+        {
+          "from": "支付接口",
+          "to": "支付发起用例",
+          "label": "3. 编排支付发起"
+        },
+        {
+          "from": "支付发起用例",
+          "to": "订单服务",
+          "label": "4. 校验订单状态"
+        },
+        {
+          "from": "支付发起用例",
+          "to": "支付服务",
+          "label": "5. 创建支付流水"
+        },
+        {
+          "from": "支付服务",
+          "to": "支付流水仓储",
+          "label": "6. 保存支付流水"
+        },
+        {
+          "from": "支付发起用例",
+          "to": "支付平台适配器",
+          "label": "7. 请求第三方支付"
+        },
+        {
+          "from": "支付平台适配器",
+          "to": "支付平台",
+          "label": "8. 调用支付平台下单"
+        }
+      ]
+    },
+    {
+      "feature": "payment",
+      "label": "支付回调处理流程",
+      "edges": [
+        {
+          "from": "支付平台",
+          "to": "支付回调接口",
+          "label": "1. 推送支付结果回调"
+        },
+        {
+          "from": "支付回调接口",
+          "to": "支付回调处理用例",
+          "label": "2. 校验回调并编排状态变更"
+        },
+        {
+          "from": "支付回调处理用例",
+          "to": "支付服务",
+          "label": "3. 更新支付流水状态"
+        },
+        {
+          "from": "支付服务",
+          "to": "支付流水仓储",
+          "label": "4. 写入支付结果"
+        },
+        {
+          "from": "支付回调处理用例",
+          "to": "订单服务",
+          "label": "5. 更新订单支付状态"
+        },
+        {
+          "from": "订单服务",
+          "to": "订单仓储",
+          "label": "6. 保存订单状态变更"
+        },
+        {
+          "from": "订单服务",
+          "to": "订单事件队列",
+          "label": "7. 发布订单已支付事件"
+        },
+        {
+          "from": "订单事件队列",
+          "to": "通知发送任务",
+          "label": "8. 触发支付成功通知"
+        },
+        {
+          "from": "通知发送任务",
+          "to": "通知服务",
+          "label": "9. 生成通知内容"
+        },
+        {
+          "from": "通知服务",
+          "to": "短信邮件适配器",
+          "label": "10. 发送支付成功通知"
+        }
+      ]
+    },
+    {
+      "feature": "admin",
+      "label": "后台商品维护流程",
+      "edges": [
+        {
+          "from": "管理员",
+          "to": "管理后台前端",
+          "label": "1. 编辑商品信息"
+        },
+        {
+          "from": "管理后台前端",
+          "to": "后台管理接口",
+          "label": "2. 提交商品维护请求"
+        },
+        {
+          "from": "后台管理接口",
+          "to": "后台商品维护用例",
+          "label": "3. 编排商品维护"
+        },
+        {
+          "from": "后台商品维护用例",
+          "to": "商品服务",
+          "label": "4. 校验并更新商品信息"
+        },
+        {
+          "from": "商品服务",
+          "to": "商品仓储",
+          "label": "5. 保存商品数据"
+        },
+        {
+          "from": "商品仓储",
+          "to": "商品库",
+          "label": "6. 写入商品记录"
+        },
+        {
+          "from": "后台商品维护用例",
+          "to": "对象存储适配器",
+          "label": "7. 上传或更新商品图片"
+        },
+        {
+          "from": "对象存储适配器",
+          "to": "商品图片对象存储",
+          "label": "8. 保存商品图片资源"
+        }
+      ]
+    }
+  ]
+}

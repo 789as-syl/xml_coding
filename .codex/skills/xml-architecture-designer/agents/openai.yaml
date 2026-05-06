@@ -1,4 +1,4 @@
 interface:
   display_name: "XML Architecture Designer"
-  short_description: "Design architecture and interface flow diagrams"
-  default_prompt: "Use $xml-architecture-designer to design a new project architecture, confirm the architecture page, then generate per-interface Draw.io flow pages."
+  short_description: "Design project architecture"
+  default_prompt: "Use $xml-architecture-designer to read the project requirement input contract, clarify only architecture-model-blocking information, save .xml/project_requirements.md, derive one strict .xml/project_architecture.json from architecture_model.md, then run scripts/export_to_xml.py to export and verify .xml/project_architecture.drawio. Treat references as authoritative rules and assets as non-authoritative examples/templates."
